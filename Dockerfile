@@ -1,4 +1,4 @@
-FROM java:8-jdk
+FROM airdock/oracle-jdk:jdk-8u74
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
