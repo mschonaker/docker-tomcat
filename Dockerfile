@@ -1,4 +1,4 @@
-FROM java:openjdk-8-jdk
+FROM java:8-jdk
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
@@ -87,7 +87,8 @@ RUN set -x \
 		&& make -j$(nproc) \
 		&& make install \
 	) \
-	&& apt-get purge -y --auto-remove $nativeBuildDeps \
+	# && apt-get purge -y --auto-remove $nativeBuildDeps \
+	&& apt-get autoremove --purge -y
 	&& rm -rf "$nativeBuildDir" \
 	&& rm bin/tomcat-native.tar.gz
 
