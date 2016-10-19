@@ -1,3 +1,3 @@
 # docker-tomcat
 
-Customizations of the official image.
+A copy of the official image, but based on JDK instead of JRE.
